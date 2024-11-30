@@ -1,0 +1,774 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+//  Root
+@font-face {
+  font-family: gaming;
+  src: url(../fonts/upheavtt.ttf);
+}
+:root {
+  --color-dark-purple: #d23069;
+  --color-purple: #df2f6d;
+  --color-light-purple: #f1c1d2;
+  --color-pink: #f33679;
+  --color-yellow: #ffd701;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Comfortaa";
+}
+.mainBox {
+  background-color: var(--color-dark-purple);
+  padding-bottom: 450px;
+}
+.main {
+  //   height: 100vh;
+  padding-top: 35px;
+
+  background-color: var(--color-dark-purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  background-image: url(../images/main-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  &Logo {
+    font-family: "gaming";
+    font-size: 60px;
+    padding-left: 40px;
+    position: relative;
+    &:hover {
+      cursor: cell;
+      .z {
+        font-size: 60px;
+        animation: logo 1.7s;
+      }
+      .k {
+        animation: move 1.5s;
+      }
+    }
+  }
+  @keyframes logo {
+    0% {
+      transform: rotateZ(-10deg);
+    }
+    20% {
+      transform: rotateZ(00deg) translateY(0px);
+    }
+    40% {
+      transform: rotateZ(0deg) translateY(-15px);
+    }
+    60% {
+      transform: rotateZ(0deg) translateY(0px);
+    }
+    80% {
+      transform: rotateZ(0deg) translateY(-15px);
+    }
+    100% {
+      transform: rotateZ(-20deg) translateY(0px);
+    }
+  }
+  @keyframes move {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    20% {
+      transform: translateX(7px);
+    }
+    40% {
+      transform: rotateZ(15deg) translateX(7px);
+    }
+    60% {
+      transform: rotateZ(-15deg) translateX(7px);
+    }
+    80% {
+      transform: rotateZ(0deg) translateX(7px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .z {
+    position: absolute;
+    left: 3px;
+    bottom: -5px;
+    font-size: 65px;
+    transform: rotateZ(-20deg);
+    text-shadow: 3.5px 1px 5px rgb(0, 0, 0, 0.8);
+    transition: 0.3s;
+  }
+  .k {
+    display: inline-block;
+    text-shadow: 2px 1px 5px rgb(0, 0, 0, 0.5);
+  }
+  &Nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 380px;
+    &Links {
+      display: flex;
+      gap: 50px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &Link {
+      color: var(--color-light-purple);
+      text-decoration: none;
+      transition: 0.3s;
+      &:hover {
+        color: white;
+        scale: 1.1;
+      }
+    }
+    &Button {
+      font-size: 25px;
+      border-radius: 7px;
+      padding: 7px 14px;
+      letter-spacing: 1px;
+    }
+  }
+  &Stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Description {
+    display: flex;
+    flex-direction: column;
+
+    // justify-content: start;
+    gap: 40px;
+  }
+  &Slogan {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &Info {
+    width: 570px;
+    color: var(--color-light-purple);
+  }
+  &Title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    line-height: 1;
+    font-family: "gaming";
+    font-size: 75px;
+    letter-spacing: 2px;
+  }
+  .firstLine {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+  }
+  .rocket {
+    width: 200px;
+    margin-top: -50px;
+  }
+  .creativity {
+    display: inline-block;
+    color: yellow;
+    font-family: "Gluten";
+    letter-spacing: -1px;
+    position: relative;
+    transform: rotateZ(-3deg);
+    &::after {
+      content: url(../images/yellow-line.svg);
+      display: inline-block;
+
+      position: absolute;
+      left: 10%;
+      bottom: -345%;
+
+      transform: rotateZ(12deg);
+    }
+  }
+  &Button {
+    font-size: 35px;
+    border-radius: 10px;
+    padding: 5px 35px;
+  }
+  &Image {
+    width: 700px;
+  }
+}
+.button {
+  color: black;
+  text-decoration: none;
+  font-family: "gaming";
+  background-color: var(--color-yellow);
+  width: fit-content;
+  box-shadow: inset 0px 0px 50px orange;
+  border: 2px solid var(--color-light-purple);
+  transition: 0.3s;
+  &:hover {
+    scale: 1.05;
+    cursor: cell;
+    box-shadow: 5px 5px 0 rgb(241, 193, 210, 0.5), inset 0px 0px 50px orange;
+  }
+}
+// End Main
+
+// About
+.aboutBox {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &Left {
+      padding: 50px 0px 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      background-image: url(../images/about-section-bg.png);
+      background-color: white;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-top-left-radius: 700px 50px;
+      border-top-right-radius: 100px 500px;
+      border-bottom-left-radius: 700px 50px;
+      border-bottom-right-radius: 100px 500px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: -300px;
+      left: 50px;
+      z-index: 3;
+      &Info {
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+    &Right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-dark-purple);
+      padding: 40px 35px;
+      padding-left: 300px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+      border-top-right-radius: 700px 80px;
+      border-top-left-radius: 100px 500px;
+      border-bottom-right-radius: 700px 80px;
+      border-bottom-left-radius: 100px 500px;
+
+      position: absolute;
+      right: 50px;
+      top: -250px;
+    }
+  }
+  &Skills {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 30px;
+  }
+  &Skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    &Name {
+      max-width: 280px;
+      font-weight: bold;
+      font-family: "comfortaa";
+      font-size: 21px;
+    }
+    &Description {
+      font-size: 15px;
+      width: 300px;
+      color: var(--color-light-purple);
+    }
+    &Icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      background-color: #343225;
+      box-shadow: inset 0 0 15px white, 0 5px 0 rgb(241, 193, 210, 0.5);
+      border-radius: 50%;
+      border: 6px solid white;
+    }
+  }
+  .character-descriping {
+    width: 400px;
+  }
+  &Rating {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 7px;
+    font-family: "gluten";
+    font-size: 18px;
+  }
+  &Button {
+    padding: 7px 20px;
+    font-size: 22px;
+    border-radius: 7px;
+    &:hover {
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 50px orange;
+    }
+  }
+  &Title {
+    max-width: 500px;
+    font-size: 45px;
+    font-family: "gaming";
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  &Paragraph {
+    max-width: 400px;
+  }
+
+  .skillIcon {
+    width: 160px;
+  }
+  &Projects {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding-top: 300px;
+    &Group {
+      display: flex;
+      gap: 40px;
+    }
+    &Header {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      &Title {
+        max-width: 500px;
+        font-size: 60px;
+        font-weight: bold;
+        font-family: "gaming";
+        letter-spacing: 2px;
+        line-height: 1;
+      }
+    }
+  }
+  &Slogan {
+    font-weight: bold;
+  }
+  &Project {
+    color: black;
+    align-items: center;
+    display: flex;
+    background-color: white;
+    padding: 15px 20px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    position: relative;
+    &Right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &Title {
+      width: 250px;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    &Description {
+      max-width: 280px;
+      color: rgb(0, 0, 0, 0.5);
+      display: none;
+    }
+    &Button {
+      background-color: var(--color-yellow);
+      width: fit-content;
+      padding: 10px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: inset inset 0px 0px 50px orange, 0 0 10px rgb(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: -10%;
+      left: 10%;
+    }
+  }
+  .projectOne:hover {
+    cursor: pointer;
+
+    .projectOneDescription {
+      display: block;
+    }
+    .plus-sign {
+      display: none;
+    }
+    .arrows-icon {
+      display: block;
+    }
+  }
+  .projectTwo:hover {
+    cursor: pointer;
+    .projectTwoDescription {
+      display: block;
+    }
+    .plus-sign {
+      display: none;
+    }
+    .arrows-icon {
+      display: block;
+    }
+  }
+  .projectThree:hover {
+    cursor: pointer;
+    .projectThreeDescription {
+      display: block;
+    }
+    .plus-sign {
+      display: none;
+    }
+    .arrows-icon {
+      display: block;
+    }
+  }
+  .plus-sign,
+  .arrows-icon {
+    width: 20px;
+  }
+  .arrows-icon {
+    display: none;
+  }
+  .projectIcon {
+    width: 200px;
+  }
+}
+.star-icon {
+  width: 30px;
+}
+// End About
+// Work
+.work {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-dark-purple);
+  padding: 140px;
+  position: relative;
+  &Container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Heading {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &Slogan {
+    text-transform: lowercase;
+    font-family: "comfortaa";
+  }
+  &Title {
+    font-family: "gaming";
+    font-size: 60px;
+    letter-spacing: 2px;
+  }
+  &Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  &Stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 16px rgb(0, 0, 0, 0.5);
+    border-radius: 15px;
+  }
+  &Nav {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+  }
+  &Input {
+    display: none;
+  }
+  &Label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    gap: 10px;
+  }
+  &Type {
+    &Name {
+      width: 280px;
+      border: 2px solid white;
+      border-radius: 7px;
+      padding: 7px 20px;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        scale: 1.05;
+        box-shadow: 0 0 16px rgb(0, 0, 0, 0.5);
+      }
+    }
+  }
+  &Info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &Card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      background-color: white;
+      border-radius: 10px;
+      &Content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
+        padding: 40px;
+        padding-right: 300px;
+      }
+      &Rating {
+        font-family: "gluten";
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 7px;
+      }
+      &Title {
+        width: 450px;
+        font-family: "gaming";
+        font-size: 40px;
+        line-height: 1;
+        letter-spacing: 2px;
+      }
+      &Description {
+        width: 520px;
+      }
+      &Bottom {
+        width: 100%;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-color: var(--color-yellow);
+        border-radius: 10px;
+      }
+
+      &Button {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-yellow);
+        color: white;
+        border: 2px solid white;
+        border-radius: 7px;
+        padding: 0px 14px;
+        width: 320px;
+        transition: 0.3s;
+        &:hover {
+          scale: 1.05;
+          box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+  .work-character {
+    position: absolute;
+    width: 530px;
+
+    top: -7%;
+    right: 0%;
+  }
+  .triangle-arrow {
+    width: 30px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.right-arrow {
+  width: 45px;
+}
+.work:has(.workInput:nth-of-type(1):checked) {
+  .first-triangle-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .landing-pages-card {
+    display: block;
+  }
+  .portfolios-card {
+    display: none;
+  }
+  .commercial-card {
+    display: none;
+  }
+  .interactivity-card {
+    display: none;
+  }
+}
+.work:has(.workInput:nth-of-type(2):checked) {
+  .second-triangle-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .landing-pages-card {
+    display: none;
+  }
+  .portfolios-card {
+    display: block;
+  }
+  .commercial-card {
+    display: none;
+  }
+  .interactivity-card {
+    display: none;
+  }
+}
+.work:has(.workInput:nth-of-type(3):checked) {
+  .third-triangle-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .landing-pages-card {
+    display: none;
+  }
+  .portfolios-card {
+    display: none;
+  }
+  .commercial-card {
+    display: block;
+  }
+  .interactivity-card {
+    display: none;
+  }
+}
+.work:has(.workInput:nth-of-type(4):checked) {
+  .fourth-triangle-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .landing-pages-card {
+    display: none;
+  }
+  .portfolios-card {
+    display: none;
+  }
+  .commercial-card {
+    display: none;
+  }
+  .interactivity-card {
+    display: block;
+  }
+}
+// End Work
