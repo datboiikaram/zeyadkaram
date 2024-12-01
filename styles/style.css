@@ -312,6 +312,7 @@ h6 {
   align-items: center;
   justify-content: center;
   margin-top: -380px;
+  position: relative;
   gap: -160px;
 }
 .aboutCardLeft {
@@ -330,6 +331,7 @@ h6 {
   border-bottom-left-radius: 700px 50px;
   border-bottom-right-radius: 100px 500px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  position: relative;
   margin-left: 70px;
   z-index: 3;
 }
@@ -354,6 +356,7 @@ h6 {
   border-bottom-right-radius: 700px 80px;
   border-bottom-left-radius: 100px 500px;
   margin-right: 70px;
+  position: relative;
   z-index: 2;
 }
 .aboutSkills {
@@ -459,6 +462,7 @@ h6 {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   position: relative;
+  flex-shrink: 0;
 }
 .aboutProjectRight {
   display: flex;
@@ -471,7 +475,7 @@ h6 {
   font-weight: bolder;
 }
 .aboutProjectDescription {
-  max-width: 280px;
+  width: 250px;
   color: rgba(0, 0, 0, 0.5);
   display: none;
 }
