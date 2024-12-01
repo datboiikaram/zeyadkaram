@@ -93,6 +93,7 @@ h6 {
   display: flex;
   flex-direction: column;
   font-family: "Comfortaa";
+  overflow: hidden;
 }
 
 .mainBox {
@@ -121,7 +122,7 @@ h6 {
   position: relative;
 }
 .mainLogo:hover {
-  cursor: cell;
+  cursor: pointer;
 }
 .mainLogo:hover .z {
   font-size: 60px;
@@ -269,6 +270,9 @@ h6 {
   border-radius: 10px;
   padding: 5px 35px;
 }
+.mainButton:hover {
+  cursor: pointer;
+}
 .mainImage {
   width: 700px;
 }
@@ -286,27 +290,29 @@ h6 {
 }
 .button:hover {
   scale: 1.05;
-  cursor: cell;
+  cursor: pointer;
   box-shadow: 5px 5px 0 rgba(241, 193, 210, 0.5), inset 0px 0px 50px orange;
 }
 
 .aboutBox {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .about {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .aboutCard {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -380px;
+  gap: -160px;
 }
 .aboutCardLeft {
   padding: 50px 0px 10px 30px;
@@ -324,9 +330,7 @@ h6 {
   border-bottom-left-radius: 700px 50px;
   border-bottom-right-radius: 100px 500px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: -300px;
-  left: 50px;
+  margin-left: 70px;
   z-index: 3;
 }
 .aboutCardLeftInfo {
@@ -335,6 +339,7 @@ h6 {
   width: fit-content;
   flex-direction: column;
   gap: 30px;
+  padding-right: 30px;
 }
 .aboutCardRight {
   display: flex;
@@ -342,15 +347,14 @@ h6 {
   justify-content: center;
   background-color: var(--color-dark-purple);
   padding: 40px 35px;
-  padding-left: 300px;
+  padding-left: 150px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
   border-top-right-radius: 700px 80px;
   border-top-left-radius: 100px 500px;
   border-bottom-right-radius: 700px 80px;
   border-bottom-left-radius: 100px 500px;
-  position: absolute;
-  right: 50px;
-  top: -250px;
+  margin-right: 70px;
+  z-index: 2;
 }
 .aboutSkills {
   display: flex;
@@ -386,7 +390,8 @@ h6 {
   border: 6px solid white;
 }
 .about .character-descriping {
-  width: 400px;
+  min-width: 450px;
+  max-width: 450px;
 }
 .aboutRating {
   display: flex;
@@ -420,9 +425,10 @@ h6 {
 .aboutProjects {
   width: 90%;
   display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
   flex-direction: column;
   gap: 120px;
-  padding-top: 300px;
 }
 .aboutProjectsGroup {
   display: flex;
@@ -538,6 +544,7 @@ h6 {
   justify-content: center;
   background-color: var(--color-dark-purple);
   padding: 140px;
+  margin-top: 100px;
   position: relative;
 }
 .workContainer {
@@ -646,6 +653,7 @@ h6 {
 }
 .workInfoCardDescription {
   width: 520px;
+  font-style: italic;
 }
 .workInfoCardBottom {
   width: 100%;
@@ -755,4 +763,130 @@ h6 {
 }
 .work:has(.workInput:nth-of-type(4):checked) .interactivity-card {
   display: block;
+}
+
+.footer {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerImage {
+  margin-bottom: -450px;
+}
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+.footerHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+.footerTitle {
+  font-size: 40px;
+  font-family: "gaming";
+  letter-spacing: 2px;
+}
+.footerMail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerInput {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 7px;
+  border-right: none;
+}
+.footerLabel {
+  margin-left: -8px;
+  background-color: var(--color-yellow);
+  padding: 9.5px 10px;
+  border-radius: 7px;
+  box-shadow: inset 0px 0px 50px orange;
+}
+.footerLabel:hover {
+  cursor: pointer;
+}
+.footerLabel:hover .mail-arrow {
+  animation: wiggle 1s infinite;
+}
+.footerNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.footerNavLink {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 5px 14px;
+  border: 2px solid white;
+  border-radius: 7px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+.footerNavLink:hover {
+  border: 2px solid black;
+}
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  gap: 270px;
+}
+.footerCopyright {
+  color: #343225;
+  font-size: 14px;
+  font-weight: bold;
+}
+.footerMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerMediaLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.footer .character-waving {
+  width: 500px;
+}
+.footer .media-icon {
+  width: 27px;
+}
+.footer .mail-arrow {
+  width: 35px;
+}
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(20deg);
+  }
+  40% {
+    transform: rotateZ(-20deg);
+  }
+  60% {
+    transform: rotateZ(20deg);
+  }
+  80% {
+    transform: rotateZ(-20deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -92,6 +92,7 @@ h6 {
   display: flex;
   flex-direction: column;
   font-family: "Comfortaa";
+  overflow: hidden;
 }
 .mainBox {
   background-color: var(--color-dark-purple);
@@ -118,7 +119,7 @@ h6 {
     padding-left: 40px;
     position: relative;
     &:hover {
-      cursor: cell;
+      cursor: pointer;
       .z {
         font-size: 60px;
         animation: logo 1.7s;
@@ -271,6 +272,9 @@ h6 {
     font-size: 35px;
     border-radius: 10px;
     padding: 5px 35px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &Image {
     width: 700px;
@@ -287,7 +291,7 @@ h6 {
   transition: 0.3s;
   &:hover {
     scale: 1.05;
-    cursor: cell;
+    cursor: pointer;
     box-shadow: 5px 5px 0 rgb(241, 193, 210, 0.5), inset 0px 0px 50px orange;
   }
 }
@@ -295,22 +299,23 @@ h6 {
 
 // About
 .aboutBox {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 .about {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   &Card {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin-top: -380px;
+    gap: -160px;
     &Left {
       padding: 50px 0px 10px 30px;
       display: flex;
@@ -327,15 +332,15 @@ h6 {
       border-bottom-left-radius: 700px 50px;
       border-bottom-right-radius: 100px 500px;
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: -300px;
-      left: 50px;
+
+      margin-left: 70px;
       z-index: 3;
       &Info {
         display: flex;
         width: fit-content;
         flex-direction: column;
         gap: 30px;
+        padding-right: 30px;
       }
     }
     &Right {
@@ -344,16 +349,14 @@ h6 {
       justify-content: center;
       background-color: var(--color-dark-purple);
       padding: 40px 35px;
-      padding-left: 300px;
+      padding-left: 150px;
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
       border-top-right-radius: 700px 80px;
       border-top-left-radius: 100px 500px;
       border-bottom-right-radius: 700px 80px;
       border-bottom-left-radius: 100px 500px;
-
-      position: absolute;
-      right: 50px;
-      top: -250px;
+      margin-right: 70px;
+      z-index: 2;
     }
   }
   &Skills {
@@ -391,7 +394,8 @@ h6 {
     }
   }
   .character-descriping {
-    width: 400px;
+    min-width: 450px;
+    max-width: 450px;
   }
   &Rating {
     display: flex;
@@ -426,9 +430,11 @@ h6 {
   &Projects {
     width: 90%;
     display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
     flex-direction: column;
     gap: 120px;
-    padding-top: 300px;
+
     &Group {
       display: flex;
       gap: 40px;
@@ -545,6 +551,7 @@ h6 {
   justify-content: center;
   background-color: var(--color-dark-purple);
   padding: 140px;
+  margin-top: 100px;
   position: relative;
   &Container {
     width: 90%;
@@ -653,6 +660,7 @@ h6 {
       }
       &Description {
         width: 520px;
+        font-style: italic;
       }
       &Bottom {
         width: 100%;
@@ -772,3 +780,130 @@ h6 {
   }
 }
 // End Work
+// Footer
+.footer {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &Image {
+    margin-bottom: -450px;
+  }
+  &Info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+  &Heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+  }
+  &Title {
+    font-size: 40px;
+    font-family: "gaming";
+    letter-spacing: 2px;
+  }
+  &Mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Input {
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 7px;
+    border-right: none;
+  }
+  &Label {
+    margin-left: -8px;
+    background-color: var(--color-yellow);
+    padding: 9.5px 10px;
+    border-radius: 7px;
+    box-shadow: inset 0px 0px 50px orange;
+    &:hover {
+      cursor: pointer;
+      .mail-arrow {
+        animation: wiggle 1s infinite;
+      }
+    }
+  }
+  &Nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    &Link {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 5px 14px;
+      border: 2px solid white;
+      border-radius: 7px;
+      text-decoration: none;
+      color: black;
+      transition: 0.3s;
+      &:hover {
+        border: 2px solid black;
+      }
+    }
+  }
+  &Bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    gap: 270px;
+  }
+  &Copyright {
+    color: #343225;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &Media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &Links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+  .character-waving {
+    width: 500px;
+  }
+  .media-icon {
+    width: 27px;
+  }
+  .mail-arrow {
+    width: 35px;
+  }
+  @keyframes wiggle {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    20% {
+      transform: rotateZ(20deg);
+    }
+    40% {
+      transform: rotateZ(-20deg);
+    }
+    60% {
+      transform: rotateZ(20deg);
+    }
+    80% {
+      transform: rotateZ(-20deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  }
+}
+// End Footer
