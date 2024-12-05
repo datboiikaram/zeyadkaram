@@ -335,6 +335,7 @@ h6 {
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
       position: relative;
       margin-left: 70px;
+      margin-right: -45px;
       z-index: 3;
       &Info {
         display: flex;
@@ -357,6 +358,7 @@ h6 {
       border-bottom-right-radius: 700px 80px;
       border-bottom-left-radius: 100px 500px;
       margin-right: 70px;
+      margin-left: -45px;
       position: relative;
       z-index: 2;
     }
@@ -430,11 +432,11 @@ h6 {
     width: 160px;
   }
   &Projects {
-    width: 90%;
     display: flex;
     margin-top: 60px;
     margin-bottom: 60px;
     flex-direction: column;
+
     gap: 120px;
     // padding: 0 20px;
 
@@ -682,15 +684,15 @@ h6 {
         align-items: center;
         justify-content: center;
         background-color: var(--color-yellow);
-        color: white;
-        border: 2px solid white;
+        color: black;
+        border: 2px solid black;
         border-radius: 7px;
         padding: 0px 14px;
         width: 320px;
         transition: 0.3s;
         &:hover {
           scale: 1.05;
-          box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.8);
+          box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
         }
       }
     }
@@ -823,16 +825,29 @@ h6 {
     border-radius: 7px;
     border-right: none;
   }
+  .mail-link {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
   &Label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: -8px;
     background-color: var(--color-yellow);
-    padding: 9.5px 10px;
-    border-radius: 7px;
+    padding: 7px 10px;
+    border: 1px solid black;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
     box-shadow: inset 0px 0px 50px orange;
+
     &:hover {
       cursor: pointer;
       .mail-arrow {
-        animation: wiggle 1s infinite;
+        animation: wiggle 1s forwards;
       }
     }
   }
@@ -879,6 +894,12 @@ h6 {
       justify-content: center;
       gap: 15px;
     }
+    &Link {
+      transition: 0.3s;
+      &:hover {
+        scale: 1.08;
+      }
+    }
   }
   .character-waving {
     width: 500px;
@@ -908,6 +929,13 @@ h6 {
     100% {
       transform: rotateZ(0deg);
     }
+  }
+}
+.footer:has(.footerInput:focus) {
+  .footerLabel {
+    flex-grow: 0;
+    border: 2px solid black;
+    border-left: 1px solid black;
   }
 }
 // End Footer
